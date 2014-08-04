@@ -5,7 +5,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('courses');
+  this.resource('courses', function() {
+    this.route('drafts');
+    this.route('published');
+    this.route('review');
+  });             
 });
 
 export default Router;
